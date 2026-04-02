@@ -14,7 +14,7 @@ namespace PiSubmarine::Exceptions
     // Using a raw function pointer saves heap and is safer for ISRs
     using HandlerFunc = void(*)(const char* message);
 
-    extern HandlerFunc GlobalHandler;
+    inline HandlerFunc GlobalHandler;
 
     template<typename E>
     [[noreturn]] void Throw(E&& exception)
